@@ -20,4 +20,4 @@ Vue.createApp({
             this.helperGetandShow(baseUrl)
         },
     }
-})
+}).mount("#app")
