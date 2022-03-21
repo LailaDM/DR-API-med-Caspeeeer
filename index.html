@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Records DR</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <h1>Music Records</h1>
+    <div id="app">
+        <h2>GetAll</h2>
+        <button id="getAllButton" v-on:click="getAllMusicRecords">Get All</button>
+        
+        <ul id="musicRecordList" v-if="musicRecords.lenght">
+            <li v-for="musicRecord in musicRecords">
+                {{musicRecord.id}} {{musicRecord.title}} {{musicRecord.artist}} {{musicRecord.duration}} {{musicRecord.publicationYear}}
+            </li>
+        </ul>
+        <div v-else>No music records</div>
+    </div>
+
+    <script src="index.js"></script>
+    
+</body>
+</html>
