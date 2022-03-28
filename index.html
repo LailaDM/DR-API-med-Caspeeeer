@@ -15,7 +15,7 @@
         <h2>GetAll</h2>
         <button id="getAllButton" v-on:click="getAllMusicRecords">Get All</button>
         
-        <ul id="musicRecordList" v-if="musicRecords.lenght">
+        <ul id="musicRecordList" v-if="musicRecords.length">
             <li v-for="musicRecord in musicRecords">
                 {{musicRecord.id}} {{musicRecord.title}} {{musicRecord.artist}} {{musicRecord.duration}} {{musicRecord.publicationYear}}
             </li>

@@ -1,22 +1,22 @@
 const baseUrl = "https://casp909i-dr-musicrecord-library-rest.azurewebsites.net/api/MusicRecords"
 
 Vue.createApp({
-    data(){
-        return{
-            musicRecords:[],
+    data() {
+        return {
+            musicRecords: [],
         }
     },
-    methods: { 
-        async helperGetandShow(url){
+    methods: {
+        async helperGetandShow(url) {
             try {
                 const response = await axios.get(url)
                 this.musicRecords = await response.data
             }
-            catch(ex){
+            catch (ex) {
                 alert(ex.message)
             }
         },
-        getAllMusicRecords(){
+        getAllMusicRecords() {
             this.helperGetandShow(baseUrl)
         },
     }
