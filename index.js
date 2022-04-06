@@ -4,6 +4,12 @@ Vue.createApp({
     data() {
         return {
             musicRecords: [],
+            ToGetByTitle: "",
+            ToGetByArtist: "",
+            ToGetByDuration: "",
+            ToGetByPublicationYear: "",
+            single: 0,
+
         }
     },
     methods: {
@@ -19,5 +25,15 @@ Vue.createApp({
         getAllMusicRecords() {
             this.helperGetandShow(baseUrl)
         },
+
+        async getBy(title, artist, duration, publicationYear) {
+            const url = baseUrl + "?title=" + title + "&artist=" + artist + "&duration=" + duration + "&publicationYear=" + publicationYear
+            try {
+                const response = await axios.get(url)
+                this.musicRecords = await response.data
+            } catch (ex) {
+                alert(ex.message)
+            }
     }
+}
 }).mount("#app")
