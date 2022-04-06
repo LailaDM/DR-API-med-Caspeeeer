@@ -33,6 +33,20 @@
         <input id="GetByPublicationYearInputfield" v-model="ToGetByPublicationYear" placeholder="Publication Year" type="text" />
         <button id="getAllByButton" v-on:click="getBy(ToGetByTitle,ToGetByArtist,ToGetByDuration,ToGetByPublicationYear)" class="btn btn-primary">Get by </button>
 
+        <h2>Delete (DELETE)</h2>
+        <input v-model.number="deleteId" placeholder="Id" type="number" />
+        <button v-on:click="deleteRecord(deleteId)" class="btn btn-danger">Delete</button>
+        {{deleteMessage}}
+
+
+        <h2>Add (POST)</h2>
+        <input v-model="addData.title" placeholder="title" type="text" />
+        <input v-model="addData.artist" placeholder="artist" type="text" />
+        <input v-model.number="addData.duration" placeholder="duration" type="number" />
+        <input v-model="addData.publicationYear" placeholder="publicationYear" type="text" />
+        <button v-on:click="addRecord()" class="btn btn-success">Add</button>
+        <div>{{addMessage}}</div>
+
     </div>
     <script src="index.js"></script>
 

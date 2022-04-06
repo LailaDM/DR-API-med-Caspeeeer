@@ -9,6 +9,13 @@ Vue.createApp({
             ToGetByDuration: "",
             ToGetByPublicationYear: "",
             single: 0,
+            deleteId: 0,
+            deleteMessage: "",
+            addData: {title: "", artist: "", duration: 0, publicationYear: ""},
+            addMessage: "",
+            updateData: {id: 0, title: "", artist: "", duration: 0, publicationYear: ""},
+            updateMessage:""
+
 
         }
     },
@@ -34,6 +41,25 @@ Vue.createApp({
             } catch (ex) {
                 alert(ex.message)
             }
+    },
+    async deleteRecord(deleteId) {
+        const url = baseUrl + "/" + deleteId
+        try {
+            response = await axios.delete(url)
+            this.deleteMessage = response.status + " " + response.statusText
+            this.getAllMusicRecords()
+        } catch (ex) {
+            alert(ex.message)
+        }
+    },
+    async addRecord() {
+        try {
+            response = await axios.post(baseUrl, this.addData)
+            this.addMessage = "response " + response.status + " " + response.statusText
+            this.getAllMusicRecords()
+        } catch (ex) {
+            alert(ex.message)
+        }
     }
 }
 }).mount("#app")
