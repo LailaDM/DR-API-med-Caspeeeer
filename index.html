@@ -27,11 +27,11 @@
         <div v-else>No music records</div>
 
         <h2>Get by (GET)</h2>
-        <input v-model="ToGetByTitle" placeholder="Title" type="text" />
-        <input v-model="ToGetByArtist" placeholder="Artist" type="text" />
-        <input v-model="ToGetByDuration" placeholder="Duration" type="number" />
-        <input v-model="ToGetByPublicationYear" placeholder="Publication Year" type="text" />
-        <button v-on:click="getBy(ToGetByTitle,ToGetByArtist,ToGetByDuration,ToGetByPublicationYear)" class="btn btn-primary">Get by </button>
+        <input id="GetByTitleInputfield" v-model="ToGetByTitle" placeholder="Title" type="text" />
+        <input id="GetByArtistInputfield" v-model="ToGetByArtist" placeholder="Artist" type="text" />
+        <input id="GetByDurationInputfield" v-model="ToGetByDuration" placeholder="Duration" type="number" />
+        <input id="GetByPublicationYearInputfield" v-model="ToGetByPublicationYear" placeholder="Publication Year" type="text" />
+        <button id="getAllByButton" v-on:click="getBy(ToGetByTitle,ToGetByArtist,ToGetByDuration,ToGetByPublicationYear)" class="btn btn-primary">Get by </button>
 
     </div>
     <script src="index.js"></script>
